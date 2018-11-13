@@ -6,11 +6,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class ZionEigTassiello_Hulk {
+public class HulkSmash_Recursive {
 	
 	private int[][] city;
 
-	public ZionEigTassiello_Hulk(String fname, int dim){
+	public HulkSmash_Recursive(String fname, int dim){
 
 		Scanner inFile = null;
 		try{
@@ -23,6 +23,7 @@ public class ZionEigTassiello_Hulk {
 
 		city = new int[dim][dim];
 
+		//grabs city integers from the file
 		for(int row = 0; row < dim; row++){
 			for(int col = 0; col < dim; col++){
 				city[row][col] = inFile.nextInt();
@@ -61,6 +62,7 @@ public class ZionEigTassiello_Hulk {
 			return -1;
 	}
 	
+	//returns true if the row and col are in bounds of the city limits
 	public boolean inBounds(int row,int col){
 		if(col >= city.length || row >= city.length || col < 0 || row < 0 || city[row][col] == -1){
 			return false;
@@ -69,7 +71,7 @@ public class ZionEigTassiello_Hulk {
 	}
 	
 	public static void main(String[] args){
-		ZionEigTassiello_Hulk test = new ZionEigTassiello_Hulk("city.txt", 12);
+		HulkSmash_Recursive test = new HulkSmash_Recursive("city.txt", 12);
 		System.out.println(test.getTotal(0, 0));
 	}
 }
