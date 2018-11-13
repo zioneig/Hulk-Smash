@@ -8,13 +8,13 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class ZionEigTassiello_JeffreyGrant_HulkSmash {
+public class HulkSmash {
 
 	private int [][] city;
 	private Stack<Sector> currentPath;
 	private Sector hulkLoc;
 
-	public ZionEigTassiello_JeffreyGrant_HulkSmash(String fname, int dim){
+	public HulkSmash(String fname, int dim){
 
 		Scanner inFile = null;
 		try{
@@ -130,7 +130,7 @@ public class ZionEigTassiello_JeffreyGrant_HulkSmash {
 
 	public static void main(String [] args){
 
-		ZionEigTassiello_JeffreyGrant_HulkSmash smash = new ZionEigTassiello_JeffreyGrant_HulkSmash("CP147.txt", 24);
+		HulkSmash smash = HulkSmash("city.txt", 12);
 
 		System.out.println("Minions destroyed: " + smash.runHulk());
 	}
